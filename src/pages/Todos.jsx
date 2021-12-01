@@ -1,7 +1,18 @@
-import React from 'react'
+/*import React/useRef/useDispatch/setSelector */
+
+import React,{ useRef } from 'react';
+import { useSelector,useDispatch } from 'react-redux';
+
 
 const Todos = () => {
-  return <div>Todos</div>
+  const newToDo = useRef('');
+
+  return(
+    <div>
+    <input type="text" />
+    <button>Add</button>
+  </div>
+  )
 }
 
 export default Todos
