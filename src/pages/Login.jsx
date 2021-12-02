@@ -1,14 +1,13 @@
 import React from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { LocalSignUp } from '../hooks/LocalStorage'
+import { IsAuthenticated } from '../auth'
 const Login = () => {
   const navigate = useNavigate()
-  const [login] = LocalSignUp()
   const handlclick = () => {
-    localStorage.setItem('user', true)
+    localStorage.setItem('login', true)
     navigate('/')
   }
-  if (login) return <Navigate to="/" />
+  if (IsAuthenticated()) return <Navigate to="/" />
 
   return (
     <div>

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 const Home = () => {
   const navigate = useNavigate()
   const signout = () => {
-    localStorage.removeItem('user')
+    localStorage.removeItem('login')
     navigate('/login')
   }
   return (

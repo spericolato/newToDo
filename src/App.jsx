@@ -1,43 +1,56 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { LocalSignUp } from './hooks/LocalStorage'
+import { IsAuthenticated } from './auth'
+
+/* --------------import components ---------------- */
+import { Sidebar } from './components'
+
+import { Container, Row, Col } from 'react-bootstrap'
+/* --------------import pages --------------------- */
 import { Home, Login, Todos, NotFound } from './pages'
 
-const RequireAuth = ({ children }) => {
-  const [login] = LocalSignUp()
-  if (!login) {
+const Layout = ({ children }) => {
+  if (!IsAuthenticated()) {
     return <Navigate to="/login" />
   }
 
-  return children
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Sidebar />
+        </Col>
+        <Col>{children}</Col>
+        <Col>Footer</Col>
+      </Row>
+    </Container>
+  )
 }
 
 const App = () => {
   return (
-    <React.Fragment>
+    <>
       <Routes>
         <Route path="/login" element={<Login />} />
-
         <Route
           path="/"
           element={
-            <RequireAuth>
+            <Layout>
               <Home />
-            </RequireAuth>
+            </Layout>
           }
         />
         <Route
           path="/todos"
           element={
-            <RequireAuth>
+            <Layout>
               <Todos />
-            </RequireAuth>
+            </Layout>
           }
         />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </React.Fragment>
+    </>
   )
 }
 
