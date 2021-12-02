@@ -7,7 +7,7 @@ import { Sidebar } from './components'
 
 import { Container, Row, Col } from 'react-bootstrap'
 /* --------------import pages --------------------- */
-import { Home, Login, Todos, NotFound } from './pages'
+import { Home, Login, Tasks, NotFound } from './pages'
 
 const Layout = ({ children }) => {
   if (!IsAuthenticated()) {
@@ -41,10 +41,10 @@ const App = () => {
           }
         />
         <Route
-          path="/todos"
+          path="/tasks"
           element={
             <Layout>
-              <Todos />
+              <Tasks />
             </Layout>
           }
         />
