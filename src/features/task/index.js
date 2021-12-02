@@ -6,17 +6,16 @@ const initialState = [
     title: '',
     descreption: '',
     done: '',
-    date: new Date(),
   },
 ]
 
-export const TodoSlice = createSlice({
-  name: 'Todo',
+export const TaskSlice = createSlice({
+  name: 'Task',
   initialState,
   reducers: {},
 })
 
 // Action creators are generated for each case reducer function
-export const {} = TodoSlice.actions
+export const {} = TaskSlice.actions
 
-export default TodoSlice.reducer
+export default TaskSlice.reducer

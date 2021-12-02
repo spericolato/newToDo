@@ -1,0 +1,33 @@
+aside {
+  height: 100vh;
+  overflow: hidden auto;
+}
+
+aside .logo {
+  display: flex;
+  align-items: center;
+}
+aside .logo .logo-icon {
+  position: relative;
+  color: #fff;
+  background-color: #fd8;
+  font-weight: 700;
+  font-size: 28px;
+  width: 2rem;
+  height: 2rem;
+  margin-inline-end: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px 30px 40px 100px / 100px 20px;
+  -webkit-border-radius: 20px 30px 40px 100px / 100px 20px;
+  -moz-border-radius: 20px 30px 40px 100px / 100px 20px;
+  -ms-border-radius: 20px 30px 40px 100px / 100px 20px;
+  -o-border-radius: 20px 30px 40px 100px / 100px 20px;
+}
+aside .logo .logo-url a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  text-transform: capitalize;
+}

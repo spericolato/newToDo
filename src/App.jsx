@@ -15,13 +15,13 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <Container>
+    <Container className="container-app">
       <Row>
-        <Col>
+        <Col md={3}>
           <Sidebar />
         </Col>
-        <Col>{children}</Col>
-        <Col>Footer</Col>
+        <Col md={6}>{children}</Col>
+        <Col md={3}>Footer</Col>
       </Row>
     </Container>
   )
